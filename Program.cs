@@ -18,7 +18,12 @@ builder.Services.AddSingleton<ServicoUsuarios>();
 builder.Services.AddSingleton<ServicoMaquinas>();
 builder.Services.AddSingleton<ServicoGoogleWorkspace>();
 
-var app = builder.Build();
+var app = builder.Build()
+
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+});
 
 app.UseStaticFiles();
 
