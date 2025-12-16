@@ -1,0 +1,44 @@
+{
+  "version": 2,
+  "dgSpecHash": "gVK6uthZF5g=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\davi.lucas\\Desktop\\TESTE3\\GoogleWorkspace2\\SistemaWorkspace.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\davi.lucas\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\10.0.0\\microsoft.aspnetcore.cryptography.keyderivation.10.0.0.nupkg.sha512",
+    "C:\\Users\\davi.lucas\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\6.0.0\\microsoft.aspnetcore.mvc.razor.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\davi.lucas\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\10.0.0\\microsoft.aspnetcore.mvc.razor.runtimecompilation.10.0.0.nupkg.sha512",
+    "C:\\Users\\davi.lucas\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.0\\microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
+    "C:\\Users\\davi.lucas\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.2\\microsoft.codeanalysis.analyzers.3.3.2.nupkg.sha512",
+    "C:\\Users\\davi.lucas\\.nuget\\packages\\microsoft.codeanalysis.common\\4.0.0\\microsoft.codeanalysis.common.4.0.0.nupkg.sha512",
+    "C:\\Users\\davi.lucas\\.nuget\\packages\\microsoft.codeanalysis.csharp\\4.0.0\\microsoft.codeanalysis.csharp.4.0.0.nupkg.sha512",
+    "C:\\Users\\davi.lucas\\.nuget\\packages\\microsoft.codeanalysis.razor\\6.0.0\\microsoft.codeanalysis.razor.6.0.0.nupkg.sha512",
+    "C:\\Users\\davi.lucas\\.nuget\\packages\\microsoft.extensions.dependencymodel\\10.0.0\\microsoft.extensions.dependencymodel.10.0.0.nupkg.sha512",
+    "C:\\Users\\davi.lucas\\.nuget\\packages\\system.text.json\\10.0.0\\system.text.json.10.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1510",
+      "level": "Warning",
+      "message": "PackageReference System.Text.Json não será podado. Considere remover este pacote das dependências, pois\u00A0ele provavelmente é desnecessário.",
+      "projectPath": "C:\\Users\\davi.lucas\\Desktop\\TESTE3\\GoogleWorkspace2\\SistemaWorkspace.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\davi.lucas\\Desktop\\TESTE3\\GoogleWorkspace2\\SistemaWorkspace.csproj",
+      "libraryId": "System.Text.Json",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1510",
+      "level": "Warning",
+      "message": "PackageReference Microsoft.AspNetCore.Cryptography.KeyDerivation não será podado. Considere remover este pacote das dependências, pois\u00A0ele provavelmente é desnecessário.",
+      "projectPath": "C:\\Users\\davi.lucas\\Desktop\\TESTE3\\GoogleWorkspace2\\SistemaWorkspace.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\davi.lucas\\Desktop\\TESTE3\\GoogleWorkspace2\\SistemaWorkspace.csproj",
+      "libraryId": "Microsoft.AspNetCore.Cryptography.KeyDerivation",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}

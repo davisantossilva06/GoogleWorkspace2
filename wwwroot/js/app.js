@@ -1,7 +1,9 @@
+EnableDefaultContentItems = true
 document.addEventListener("DOMContentLoaded", () => {
     inicializarFormularioLogin();
     inicializarFormularioCriarSenha();
 });
+
 
 function inicializarFormularioLogin() {
     const formulario = document.querySelector("form");
