@@ -1,3 +1,9 @@
+#dotnet add package Google.Apis.Admin.Directory.directory_v1
+#dotnet add package Google.Apis.Auth
+#dotnet add package Google.Apis
+#dotnet restore
+#dotnet build
+
 using Google.Apis.Admin.Directory.directory_v1;
 using Google.Apis.Admin.Directory.directory_v1.Data;
 using Google.Apis.Auth.OAuth2;
