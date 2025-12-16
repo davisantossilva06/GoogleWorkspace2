@@ -23,6 +23,12 @@ public class MiddlewareFiltroMaquina
             await proximo(contexto);
             return;
         }
+        var ip = contexto.Connection.RemoteIpAddress?.ToString();
+
+if (ip != null && ip.StartsWith("::ffff:"))
+{
+    ip = ip.Replace("::ffff:", "");
+}
 
         var ip = contexto.Connection.RemoteIpAddress?.ToString() ?? "";
 
