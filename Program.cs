@@ -1,5 +1,6 @@
 using SistemaWorkspace.Middlewares;
 using SistemaWorkspace.Servicos;
+using Microsoft.AspNetCore.HttpOverrides;
 
 var builder = WebApplication.CreateBuilder(args);
 
