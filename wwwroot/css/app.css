@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.login-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  background: #020617;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 320px;
+}
+
+.login-card h1 {
+  margin-bottom: .5rem;
+}
+
+.login-card input {
+  width: 100%;
+  padding: .6rem;
+  margin: .4rem 0;
+  border-radius: 6px;
+  border: none;
+}
+
+.login-card button {
+  width: 100%;
+  padding: .7rem;
+  margin-top: .6rem;
+  background: #2563eb;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.erro {
+  margin-top: .5rem;
+  color: #f87171;
+}
+
+.painel-container {
+  padding: 2rem;
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.conteudo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #020617;
+  padding: 1.5rem;
+  border-radius: 12px;
+}

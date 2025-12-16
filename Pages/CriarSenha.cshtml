@@ -1,0 +1,20 @@
+@page
+@model CriarSenhaModel
+<link rel="stylesheet" href="/css/app.css">
+
+<div class="login-container">
+  <form method="post" class="login-card">
+    <h1>Criar Senha</h1>
+    <p>Primeiro acesso</p>
+
+    <input asp-for="NovaSenha" type="password" placeholder="Nova senha" />
+    <input asp-for="ConfirmacaoSenha" type="password" placeholder="Confirmar senha" />
+
+    <button type="submit">Salvar senha</button>
+
+    @if (!string.IsNullOrEmpty(Model.MensagemErro))
+    {
+      <div class="erro">@Model.MensagemErro</div>
+    }
+  </form>
+</div>

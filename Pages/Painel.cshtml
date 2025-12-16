@@ -1,0 +1,23 @@
+@page
+@model PainelModel
+<link rel="stylesheet" href="/css/app.css">
+
+<div class="painel-container">
+  <header class="topo">
+    <h1>Painel Workspace</h1>
+    <span>@Model.EmailUsuario</span>
+    <a href="/Logout">Sair</a>
+  </header>
+
+  <section class="conteudo">
+    <div class="card">
+      <h2>Status</h2>
+      <p>Sistema ativo</p>
+    </div>
+
+    <div class="card">
+      <h2>Relatórios</h2>
+      <p>Google Workspace</p>
+    </div>
+  </section>
+</div>

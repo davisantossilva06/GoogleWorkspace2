@@ -1,0 +1,9 @@
+[
+  {
+    "email": "admin@empresa.com",
+    "senhaDefinida": false,
+    "salt": "",
+    "hashSenha": ""
+  }
+]
+ 
