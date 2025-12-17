@@ -13,13 +13,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
 
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>portable</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-  </PropertyGroup>
+  </PropertyGroup>  
 
   <ItemGroup>
 

@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Davi\\Desktop\\PainelWorkspace\\GoogleWorkspace2\\SistemaWorkspace.csproj": {}
+    "C:\\Users\\davi.lucas\\source\\repos\\GoogleWorkspace2\\SistemaWorkspace.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Davi\\Desktop\\PainelWorkspace\\GoogleWorkspace2\\SistemaWorkspace.csproj": {
+    "C:\\Users\\davi.lucas\\source\\repos\\GoogleWorkspace2\\SistemaWorkspace.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Davi\\Desktop\\PainelWorkspace\\GoogleWorkspace2\\SistemaWorkspace.csproj",
+        "projectUniqueName": "C:\\Users\\davi.lucas\\source\\repos\\GoogleWorkspace2\\SistemaWorkspace.csproj",
         "projectName": "SistemaWorkspace",
-        "projectPath": "C:\\Users\\Davi\\Desktop\\PainelWorkspace\\GoogleWorkspace2\\SistemaWorkspace.csproj",
-        "packagesPath": "C:\\Users\\Davi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Davi\\Desktop\\PainelWorkspace\\GoogleWorkspace2\\obj\\",
+        "projectPath": "C:\\Users\\davi.lucas\\source\\repos\\GoogleWorkspace2\\SistemaWorkspace.csproj",
+        "packagesPath": "C:\\Users\\davi.lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\davi.lucas\\source\\repos\\GoogleWorkspace2\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Davi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\davi.lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

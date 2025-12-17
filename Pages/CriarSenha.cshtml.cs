@@ -45,12 +45,6 @@ public class CriarSenhaModel : PageModel
     var senha = (NovaSenha ?? "").Trim();
     var confirmacao = (ConfirmacaoSenha ?? "").Trim();
 
-    if (senha.Length < 8)
-    {
-        Erro = "A senha deve ter no mínimo 8 caracteres.";
-        return Page();
-    }
-
     if (senha != confirmacao)
     {
         Erro = "As senhas não coincidem.";
