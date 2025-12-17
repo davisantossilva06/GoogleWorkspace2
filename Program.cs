@@ -11,6 +11,7 @@ builder.Services.AddSession(options =>
     options.IdleTimeout = TimeSpan.FromMinutes(30);
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
+    options.Cookie.SameSite = SameSiteMode.Lax;
 });
 
 builder.Services.AddSingleton<ServicoSeguranca>();
@@ -18,11 +19,16 @@ builder.Services.AddSingleton<ServicoUsuarios>();
 builder.Services.AddSingleton<ServicoMaquinas>();
 builder.Services.AddSingleton<ServicoGoogleWorkspace>();
 
-var app = builder.Build()
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+
+var app = builder.Build();
 
 app.UseForwardedHeaders(new ForwardedHeadersOptions
 {
-    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+    ForwardedHeaders =
+        ForwardedHeaders.XForwardedFor |
+        ForwardedHeaders.XForwardedProto
 });
 
 app.UseStaticFiles();
@@ -30,6 +36,12 @@ app.UseStaticFiles();
 app.UseSession();
 
 app.UseMiddleware<MiddlewareFiltroMaquina>();
+
+app.MapGet("/", context =>
+{
+    context.Response.Redirect("/Login");
+    return Task.CompletedTask;
+});
 
 app.MapRazorPages();
 

@@ -6,7 +6,6 @@ namespace SistemaWorkspace.Pages;
 
 public class PainelModel : PageModel
 {
-    // 🔹 PROPRIEDADE QUE ESTAVA FALTANDO
     public string EmailUsuario { get; set; } = "";
 
     public IActionResult OnGet()

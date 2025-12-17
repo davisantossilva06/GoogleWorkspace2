@@ -1,0 +1,37 @@
+@page
+@model SistemaWorkspace.Pages.PrimeiroAcessoModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<link rel="stylesheet" href="/css/app.css">
+
+<div class="login-wrapper">
+    <div class="login-card">
+
+        <h1>Primeiro acesso</h1>
+        <p>Verificação de email institucional</p>
+
+        <form method="post">
+            @Html.AntiForgeryToken()
+
+            <div class="campo">
+                <label>Email</label>
+                <input asp-for="Email"
+                       type="text"
+                       autocomplete="email"
+                       placeholder="usuario@empresa.com" />
+            </div>
+
+            <button type="submit" class="botao-principal">
+                Verificar
+            </button>
+
+            @if (!string.IsNullOrEmpty(Model.Erro))
+            {
+                <div class="mensagem-erro">
+                    @Model.Erro
+                </div>
+            }
+        </form>
+
+    </div>
+</div>

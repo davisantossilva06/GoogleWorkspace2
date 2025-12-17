@@ -1,86 +1,91 @@
-#dotnet add package Google.Apis.Admin.Directory.directory_v1
-#dotnet add package Google.Apis.Auth
-#dotnet add package Google.Apis
-#dotnet restore
-#dotnet build
-
 using Google.Apis.Admin.Directory.directory_v1;
 using Google.Apis.Admin.Directory.directory_v1.Data;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
+using Microsoft.Extensions.Hosting;
 using System.Text.Json;
 
 namespace SistemaWorkspace.Servicos
 {
     public class ServicoGoogleWorkspace
     {
-        
         private readonly string _caminhoCredenciais;
         private readonly string _emailAdministrador;
 
-        private readonly string[] _escopos =
+        private static readonly string[] Escopos =
         {
             DirectoryService.Scope.AdminDirectoryUserReadonly,
             DirectoryService.Scope.AdminDirectoryGroupReadonly
         };
 
-        public ServicoGoogleWorkspace(IWebHostEnvironment env)
+        public ServicoGoogleWorkspace(IWebHostEnvironment ambiente)
         {
             _caminhoCredenciais = Path.Combine(
-                env.ContentRootPath,
+                ambiente.ContentRootPath,
                 "Dados",
-                "google_auth.json"
+                "google_service_account.json"
             );
+
+            if (!File.Exists(_caminhoCredenciais))
+                throw new FileNotFoundException(
+                    "Arquivo google_service_account.json não encontrado em /Dados"
+                );
 
             _emailAdministrador = LerEmailAdministrador();
         }
-
-        private DirectoryService CriarServicoDirectory()
+        private DirectoryService CriarDirectoryService()
         {
-            if (!File.Exists(_caminhoCredenciais))
-                throw new FileNotFoundException("Arquivo google_auth.json não encontrado");
-
             GoogleCredential credencial;
 
             using (var stream = new FileStream(_caminhoCredenciais, FileMode.Open, FileAccess.Read))
             {
                 credencial = GoogleCredential
                     .FromStream(stream)
-                    .CreateScoped(_escopos)
+                    .CreateScoped(Escopos)
                     .CreateWithUser(_emailAdministrador);
             }
 
-            return new DirectoryService(new BaseClientService.Initializer
-            {
-                HttpClientInitializer = credencial,
-                ApplicationName = "SistemaWorkspace"
-            });
+            return new DirectoryService(
+                new BaseClientService.Initializer
+                {
+                    HttpClientInitializer = credencial,
+                    ApplicationName = "SistemaWorkspace"
+                }
+            );
         }
 
         public List<UsuarioWorkspace> ListarUsuarios()
         {
-            var service = CriarServicoDirectory();
-            var usuarios = new List<UsuarioWorkspace>();
+            var servico = CriarDirectoryService();
+            var listaUsuarios = new List<UsuarioWorkspace>();
 
-            var requisicao = service.Users.List();
+            var requisicao = servico.Users.List();
             requisicao.Customer = "my_customer";
             requisicao.MaxResults = 500;
             requisicao.OrderBy = UsersResource.ListRequest.OrderByEnum.Email;
 
             do
             {
-                var resposta = requisicao.Execute();
+                Users resposta;
+
+                try
+                {
+                    resposta = requisicao.Execute();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Erro ao consultar usuários do Google Workspace", ex);
+                }
 
                 if (resposta.UsersValue != null)
                 {
-                    foreach (var u in resposta.UsersValue)
+                    foreach (var usuario in resposta.UsersValue)
                     {
-                        usuarios.Add(new UsuarioWorkspace
+                        listaUsuarios.Add(new UsuarioWorkspace
                         {
-                            Email = u.PrimaryEmail,
-                            NomeCompleto = u.Name.FullName,
-                            Ativo = !u.Suspended,
-                            UltimoLogin = u.LastLoginTime
+                            Email = usuario.PrimaryEmail ?? "",
+                            NomeCompleto = usuario.Name?.FullName ?? "",
+                            Ativo = usuario.Suspended == false,
                         });
                     }
                 }
@@ -89,9 +94,8 @@ namespace SistemaWorkspace.Servicos
 
             } while (!string.IsNullOrEmpty(requisicao.PageToken));
 
-            return usuarios;
+            return listaUsuarios;
         }
-
         public List<CaixaEmailWorkspace> ListarCaixasEmail()
         {
             var usuarios = ListarUsuarios();
@@ -103,7 +107,6 @@ namespace SistemaWorkspace.Servicos
                 UltimoAcesso = u.UltimoLogin
             }).ToList();
         }
-
         public ResumoWorkspace ObterResumo()
         {
             var usuarios = ListarUsuarios();
@@ -124,10 +127,10 @@ namespace SistemaWorkspace.Servicos
             var json = File.ReadAllText(_caminhoCredenciais);
             using var doc = JsonDocument.Parse(json);
 
-            if (!doc.RootElement.TryGetProperty("admin_email", out var email))
-                throw new Exception("admin_email não encontrado no google_auth.json");
+            if (!doc.RootElement.TryGetProperty("client_email", out _))
+                throw new Exception("Arquivo google_service_account.json inválido");
 
-            return email.GetString()!;
+            return "admin@painelworkspace.com";
         }
     }
 

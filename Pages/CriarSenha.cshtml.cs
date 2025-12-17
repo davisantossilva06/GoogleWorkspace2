@@ -13,44 +13,69 @@ public class CriarSenhaModel : PageModel
         _usuarios = usuarios;
     }
 
-    [BindProperty] public string NovaSenha { get; set; } = "";
-    [BindProperty] public string ConfirmacaoSenha { get; set; } = "";
+    [BindProperty]
+    public string NovaSenha { get; set; } = "";
 
-    public string MensagemErro { get; set; } = "";
+    [BindProperty]
+    public string ConfirmacaoSenha { get; set; } = "";
+
+    public string Erro { get; set; } = "";
 
     public IActionResult OnGet()
-    {
-        if (HttpContext.Session.GetString("email_criacao") == null)
-            return RedirectToPage("/Login");
+{
+    var email = HttpContext.Session.GetString("email_primeiro_acesso");
 
+    if (string.IsNullOrEmpty(email))
+    {
+        return RedirectToPage("/PrimeiroAcesso");
+    }
+
+    return Page();
+}
+    public IActionResult OnPost()
+{
+    ModelState.Clear();
+
+    var email = HttpContext.Session.GetString("email_primeiro_acesso");
+    if (string.IsNullOrEmpty(email))
+    {
+        return RedirectToPage("/PrimeiroAcesso");
+    }
+
+    var senha = (NovaSenha ?? "").Trim();
+    var confirmacao = (ConfirmacaoSenha ?? "").Trim();
+
+    if (senha.Length < 8)
+    {
+        Erro = "A senha deve ter no mínimo 8 caracteres.";
         return Page();
     }
 
-    public IActionResult OnPost()
+    if (senha != confirmacao)
     {
-        var email = HttpContext.Session.GetString("email_criacao");
-        if (email == null) return RedirectToPage("/Login");
-
-        if (NovaSenha.Length < 8)
-        {
-            MensagemErro = "A senha deve ter no mínimo 8 caracteres";
-            return Page();
-        }
-
-        if (NovaSenha != ConfirmacaoSenha)
-        {
-            MensagemErro = "As senhas não coincidem";
-            return Page();
-        }
-
-        var usuario = _usuarios.ObterPorEmail(email);
-        if (usuario == null) return RedirectToPage("/Login");
-
-        _usuarios.DefinirSenha(usuario, NovaSenha);
-
-        HttpContext.Session.Remove("email_criacao");
-        HttpContext.Session.SetString("usuario_logado", email);
-
-        return RedirectToPage("/Painel");
+        Erro = "As senhas não coincidem.";
+        return Page();
     }
+
+    var usuario = _usuarios.BuscarPorEmail(email);
+    if (usuario == null)
+    {
+        Erro = "Usuário não encontrado.";
+        return Page();
+    }
+
+    if (usuario.SenhaDefinida)
+    {
+        return RedirectToPage("/Login");
+    }
+
+    _usuarios.DefinirSenha(email, senha);
+
+    HttpContext.Session.Remove("email_primeiro_acesso");
+    HttpContext.Session.SetString("usuario_logado", email);
+
+    return RedirectToPage("/Painel");
+}
+
+
 }

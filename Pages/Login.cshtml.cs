@@ -20,27 +20,34 @@ public class LoginModel : PageModel
 
     public IActionResult OnPost()
     {
-        var usuario = _usuarios.ObterPorEmail(Email);
+        if (string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Senha))
+        {
+            MensagemErro = "Informe email e senha.";
+            return Page();
+        }
+
+        var email = Email.Trim().ToLower();
+        var usuario = _usuarios.BuscarPorEmail(email);
 
         if (usuario == null)
         {
-            MensagemErro = "Usuário não cadastrado";
+            MensagemErro = "Email não encontrado.";
             return Page();
         }
 
         if (!usuario.SenhaDefinida)
         {
-            HttpContext.Session.SetString("email_criacao", Email);
+            HttpContext.Session.SetString("email_primeiro_acesso", email);
             return RedirectToPage("/CriarSenha");
         }
 
-        if (!_usuarios.ValidarSenha(usuario, Senha))
+        if (!_usuarios.ValidarSenha(email, Senha))
         {
-            MensagemErro = "Senha incorreta";
+            MensagemErro = "Senha incorreta.";
             return Page();
         }
 
-        HttpContext.Session.SetString("usuario_logado", Email);
+        HttpContext.Session.SetString("usuario_logado", email);
         return RedirectToPage("/Painel");
     }
 }

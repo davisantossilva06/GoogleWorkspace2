@@ -1,71 +1,133 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0f172a;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617 60%);
   color: #e5e7eb;
 }
 
-.login-container {
+.login-wrapper {
+  min-height: 100vh;
   display: flex;
-  height: 100vh;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .login-card {
+  width: 380px;
+  padding: 2.5rem;
+  background: rgba(2, 6, 23, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.05),
+    0 30px 60px rgba(0,0,0,0.7);
+  animation: fadeIn 0.6s ease;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+.login-header h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.login-header p {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-top: 0.3rem;
+}
+
+.campo {
+  margin-bottom: 1.2rem;
+}
+
+.campo label {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+  color: #cbd5f5;
+}
+
+.campo input {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #1e293b;
   background: #020617;
-  padding: 2rem;
-  border-radius: 12px;
-  width: 320px;
+  color: #e5e7eb;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
 }
 
-.login-card h1 {
-  margin-bottom: .5rem;
+.campo input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.25);
 }
 
-.login-card input {
+.botao-principal {
   width: 100%;
-  padding: .6rem;
-  margin: .4rem 0;
-  border-radius: 6px;
+  padding: 0.75rem;
+  margin-top: 0.4rem;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
   border: none;
-}
-
-.login-card button {
-  width: 100%;
-  padding: .7rem;
-  margin-top: .6rem;
-  background: #2563eb;
-  border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   color: white;
+  font-weight: 500;
   cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.erro {
-  margin-top: .5rem;
-  color: #f87171;
+.botao-principal:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(37,99,235,0.45);
 }
 
-.painel-container {
-  padding: 2rem;
+.link-secundario {
+  display: block;
+  margin-top: 0.8rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #60a5fa;
+  text-decoration: none;
 }
 
-.topo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.link-secundario:hover {
+  text-decoration: underline;
 }
 
-.conteudo {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
+.mensagem-erro {
+  margin-top: 1rem;
+  padding: 0.6rem;
+  background: rgba(248,113,113,0.12);
+  border-left: 4px solid #f87171;
+  border-radius: 8px;
+  color: #fecaca;
+  font-size: 0.85rem;
 }
 
-.card {
-  background: #020617;
-  padding: 1.5rem;
-  border-radius: 12px;
+.login-footer {
+  margin-top: 1.8rem;
+  text-align: center;
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

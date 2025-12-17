@@ -1,20 +1,41 @@
 @page
 @model SistemaWorkspace.Pages.LoginModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 <link rel="stylesheet" href="/css/app.css">
 
-<div class="login-container">
-  <form method="post" class="login-card">
-    <h1>Sistema Workspace</h1>
-    <p>Acesso institucional</p>
+<div class="login-wrapper">
+    <div class="login-card">
 
-    <input asp-for="Email" placeholder="Email institucional" autocomplete="username" />
-    <input asp-for="Senha" type="password" placeholder="Senha" autocomplete="current-password" />
+        <div class="login-header">
+            <h1>Sistema Workspace</h1>
+            <p>Acesso institucional</p>
+        </div>
 
-    <button type="submit">Entrar</button>
+        <form method="post">
+            @Html.AntiForgeryToken()
 
-    @if (!string.IsNullOrEmpty(Model.MensagemErro))
-    {
-      <div class="erro">@Model.MensagemErro</div>
-    }
-  </form>
+            <div class="campo">
+                <label>Email</label>
+                <input asp-for="Email" type="email" required />
+            </div>
+
+            <div class="campo">
+                <label>Senha</label>
+                <input asp-for="Senha" type="password" />
+            </div>
+
+            <button class="botao-principal">Entrar</button>
+
+            <a href="/PrimeiroAcesso" class="link-secundario">
+                Primeiro acesso
+            </a>
+
+            @if (!string.IsNullOrEmpty(Model.MensagemErro))
+            {
+                <div class="mensagem-erro">@Model.MensagemErro</div>
+            }
+        </form>
+
+    </div>
 </div>

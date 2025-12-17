@@ -9,3 +9,14 @@ C:\Users\davi.lucas\Desktop\TESTE3\GoogleWorkspace2\obj\Debug\net10.0\SistemaWor
 C:\Users\davi.lucas\Desktop\TESTE3\GoogleWorkspace2\obj\Debug\net10.0\SistemaWorkspace.RazorAssemblyInfo.cache
 C:\Users\davi.lucas\Desktop\TESTE3\GoogleWorkspace2\obj\Debug\net10.0\SistemaWorkspace.RazorAssemblyInfo.cs
 C:\Users\davi.lucas\Desktop\TESTE3\GoogleWorkspace2\obj\Debug\net10.0\SistemaWorkspace.sourcelink.json
+C:\Users\Davi\Desktop\PainelWorkspace\GoogleWorkspace2\obj\Debug\net10.0\SistemaWorkspace.csproj.AssemblyReference.cache
+C:\Users\Davi\Desktop\PainelWorkspace\GoogleWorkspace2\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Davi\Desktop\PainelWorkspace\GoogleWorkspace2\obj\Debug\net10.0\SistemaWorkspace.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Davi\Desktop\PainelWorkspace\GoogleWorkspace2\obj\Debug\net10.0\SistemaWorkspace.AssemblyInfoInputs.cache
+C:\Users\Davi\Desktop\PainelWorkspace\GoogleWorkspace2\obj\Debug\net10.0\SistemaWorkspace.AssemblyInfo.cs
+C:\Users\Davi\Desktop\PainelWorkspace\GoogleWorkspace2\obj\Debug\net10.0\SistemaWorkspace.csproj.CoreCompileInputs.cache
+C:\Users\Davi\Desktop\PainelWorkspace\GoogleWorkspace2\obj\Debug\net10.0\SistemaWorkspace.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Davi\Desktop\PainelWorkspace\GoogleWorkspace2\obj\Debug\net10.0\SistemaWorkspace.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Davi\Desktop\PainelWorkspace\GoogleWorkspace2\obj\Debug\net10.0\SistemaWorkspace.RazorAssemblyInfo.cache
+C:\Users\Davi\Desktop\PainelWorkspace\GoogleWorkspace2\obj\Debug\net10.0\SistemaWorkspace.RazorAssemblyInfo.cs
+C:\Users\Davi\Desktop\PainelWorkspace\GoogleWorkspace2\obj\Debug\net10.0\SistemaWorkspace.sourcelink.json

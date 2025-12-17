@@ -2,6 +2,6 @@ namespace SistemaWorkspace.Modelos;
 
 public class MaquinaAutorizada
 {
-    public string Ip { get; set; } = "ALEN18853";
-    public string Nome { get; set; } = "10.200.5.96";
+    public string Ip { get; set; } = "192.168.1.7";
+    public string Nome { get; set; } = "DESKTOP-673FFA5";
 }

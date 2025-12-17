@@ -68,14 +68,4 @@ function mostrarErro(elemento, mensagem) {
     elemento.style.display = "block";
 }
 
-/*
-----------------------------------------------------
- PAINEL (reservado para futuras funções)
-----------------------------------------------------
-*/
-// Aqui futuramente você pode colocar:
-// - fetch de relatórios Google Workspace
-// - gráficos
-// - exportação de dados
-// - atualização automática
 

@@ -1,20 +1,52 @@
 @page
 @model SistemaWorkspace.Pages.CriarSenhaModel
+
 <link rel="stylesheet" href="/css/app.css">
 
-<div class="login-container">
-  <form method="post" class="login-card">
-    <h1>Criar Senha</h1>
-    <p>Primeiro acesso</p>
+<div class="login-wrapper">
+    <div class="login-card">
 
-    <input asp-for="NovaSenha" type="password" placeholder="Nova senha" />
-    <input asp-for="ConfirmacaoSenha" type="password" placeholder="Confirmar senha" />
+        <h1>Definir senha</h1>
+        <p>Primeiro acesso</p>
 
-    <button type="submit">Salvar senha</button>
+        <form method="post">
+            @Html.AntiForgeryToken()
 
-    @if (!string.IsNullOrEmpty(Model.MensagemErro))
-    {
-      <div class="erro">@Model.MensagemErro</div>
-    }
-  </form>
+            <div class="campo">
+                <label>Nova senha</label>
+                <input asp-for="NovaSenha"
+                       type="password"
+                       placeholder="Mínimo 8 caracteres"
+                       minlength="8"
+                       autocomplete="new-password"
+                       required />
+            </div>
+
+            <div class="campo">
+                <label>Confirmar senha</label>
+                <input asp-for="ConfirmacaoSenha"
+                       type="password"
+                       placeholder="Repita a senha"
+                       minlength="8"
+                       autocomplete="new-password"
+                       required />
+            </div>
+
+            <button type="submit" class="botao-principal">
+                Salvar senha
+            </button>
+
+            @if (!string.IsNullOrEmpty(Model.Erro))
+            {
+                <div class="mensagem-erro">
+                    @Model.Erro
+                </div>
+            }
+        </form>
+
+        <div class="login-footer">
+            Segurança • Primeiro acesso
+        </div>
+
+    </div>
 </div>

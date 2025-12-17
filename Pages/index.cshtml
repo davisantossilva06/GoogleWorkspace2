@@ -1,0 +1,32 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+
+namespace SistemaWorkspace.Pages;
+
+public class LoginModel : PageModel
+{
+    [BindProperty]
+    public string Email { get; set; } = "";
+
+    [BindProperty]
+    public string Senha { get; set; } = "";
+
+    public string MensagemErro { get; set; } = "";
+
+    public void OnGet()
+    {
+    }
+
+    public IActionResult OnPost()
+    {
+        if (string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Senha))
+        {
+            MensagemErro = "Preencha todos os campos.";
+            return Page();
+        }
+
+        HttpContext.Session.SetString("usuario_logado", Email);
+
+        return RedirectToPage("/Painel");
+    }
+}
