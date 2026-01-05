@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2/+bjQi9xrg=",
+  "dgSpecHash": "eFnHqCrbe+0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrador\\Desktop\\PainelWorkspace2\\01\\SistemaWorkspace.csproj",
+  "projectFilePath": "C:\\Users\\Administrador\\Desktop\\painel2\\PainelWorkspace2\\01\\SistemaWorkspace.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrador\\.nuget\\packages\\google.apis\\1.73.0\\google.apis.1.73.0.nupkg.sha512",
     "C:\\Users\\Administrador\\.nuget\\packages\\google.apis.admin.directory.directory_v1\\1.73.0.3980\\google.apis.admin.directory.directory_v1.1.73.0.3980.nupkg.sha512",

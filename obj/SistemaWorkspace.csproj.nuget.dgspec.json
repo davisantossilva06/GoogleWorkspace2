@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrador\\Desktop\\PainelWorkspace2\\01\\SistemaWorkspace.csproj": {}
+    "C:\\Users\\Administrador\\Desktop\\painel2\\PainelWorkspace2\\01\\SistemaWorkspace.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrador\\Desktop\\PainelWorkspace2\\01\\SistemaWorkspace.csproj": {
+    "C:\\Users\\Administrador\\Desktop\\painel2\\PainelWorkspace2\\01\\SistemaWorkspace.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrador\\Desktop\\PainelWorkspace2\\01\\SistemaWorkspace.csproj",
+        "projectUniqueName": "C:\\Users\\Administrador\\Desktop\\painel2\\PainelWorkspace2\\01\\SistemaWorkspace.csproj",
         "projectName": "SistemaWorkspace",
-        "projectPath": "C:\\Users\\Administrador\\Desktop\\PainelWorkspace2\\01\\SistemaWorkspace.csproj",
+        "projectPath": "C:\\Users\\Administrador\\Desktop\\painel2\\PainelWorkspace2\\01\\SistemaWorkspace.csproj",
         "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrador\\Desktop\\PainelWorkspace2\\01\\obj\\",
+        "outputPath": "C:\\Users\\Administrador\\Desktop\\painel2\\PainelWorkspace2\\01\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

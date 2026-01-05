@@ -17,6 +17,11 @@
     },
     {
       "Email": "teste3@painelworkspace.com",
+      "SenhaDefinida": false,
+      "HashSenha": ""
+    },
+    {
+      "Email": "omg@painelworkspace.com",
       "SenhaDefinida": true,
       "HashSenha": "47DEQpj8HBSa\u002B/TImW\u002B5JCeuQeRkm5NMpJWZG3hSuFU="
     }

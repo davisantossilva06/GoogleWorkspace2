@@ -88,11 +88,12 @@ public class MiddlewareFiltroMaquina
             caminho.StartsWith("/login") ||
             caminho.StartsWith("/primeiroacesso") ||
             caminho.StartsWith("/criarsenha") ||
-            caminho.StartsWith("/Painel") ||
+            caminho.StartsWith("/painel") ||
             caminho.StartsWith("/css") ||
             caminho.StartsWith("/js") ||
             caminho.StartsWith("/favicon") ||
             caminho.StartsWith("/lib") ||
+            caminho.StartsWith("/logout") ||
             caminho.StartsWith("/_framework");
     }
 
