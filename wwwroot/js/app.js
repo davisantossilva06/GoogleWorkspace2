@@ -68,4 +68,12 @@ function mostrarErro(elemento, mensagem) {
     elemento.style.display = "block";
 }
 
+function esconderErro(elemento) {
+    if (!elemento) return;
+    elemento.innerText = "";
+    elemento.style.display = "none";
+}
+
+function autenticarGoogle(g_id_signin)
+        if ()
 

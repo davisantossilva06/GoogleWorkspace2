@@ -68,7 +68,7 @@ public class CriarSenhaModel : PageModel
     HttpContext.Session.Remove("email_primeiro_acesso");
     HttpContext.Session.SetString("usuario_logado", email);
 
-    return RedirectToPage("/Painel");
+    return RedirectToPage("/painel");
 }
 
 

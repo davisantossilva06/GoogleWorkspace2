@@ -2,13 +2,23 @@
   "emails": [
     {
       "Email": "admin@painelworkspace.com",
-      "SenhaDefinida": true,
-      "HashSenha": "47DEQpj8HBSa\u002B/TImW\u002B5JCeuQeRkm5NMpJWZG3hSuFU="
+      "SenhaDefinida": false,
+      "HashSenha": ""
     },
     {
       "Email": "davi@painelworkspace.com",
       "SenhaDefinida": false,
       "HashSenha": ""
+    },
+    {
+      "Email": "teste@painelworkspace.com",
+      "SenhaDefinida": false,
+      "HashSenha": ""
+    },
+    {
+      "Email": "teste3@painelworkspace.com",
+      "SenhaDefinida": true,
+      "HashSenha": "47DEQpj8HBSa\u002B/TImW\u002B5JCeuQeRkm5NMpJWZG3hSuFU="
     }
   ]
 }

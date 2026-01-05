@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SistemaWorkspace")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab80842e8a48caef76cee317557bfb046731c0fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2099bfc42fef0c3add541a07d5cac60a97a82f5c")]
 [assembly: System.Reflection.AssemblyProductAttribute("SistemaWorkspace")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SistemaWorkspace")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

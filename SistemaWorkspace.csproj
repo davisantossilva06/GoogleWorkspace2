@@ -35,7 +35,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
 
-    <None Update="Dados\maquinas.json">
+    <None Update="PainelWorkspace2\\01\\Dados\\maquinas.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
 

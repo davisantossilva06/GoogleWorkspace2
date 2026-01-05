@@ -68,7 +68,7 @@ public class MiddlewareFiltroMaquina
             await ResponderErro(
                 contexto,
                 StatusCodes.Status403Forbidden,
-                $"Máquina não autorizada (IP: {ip})"
+                $"Mquina não autorizada (IP: {ip})"
             );
             return;
         }
@@ -88,6 +88,7 @@ public class MiddlewareFiltroMaquina
             caminho.StartsWith("/login") ||
             caminho.StartsWith("/primeiroacesso") ||
             caminho.StartsWith("/criarsenha") ||
+            caminho.StartsWith("/Painel") ||
             caminho.StartsWith("/css") ||
             caminho.StartsWith("/js") ||
             caminho.StartsWith("/favicon") ||
