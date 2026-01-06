@@ -1,5 +1,12 @@
 {
   "sdk": {
     "version": "8.0.416"
+  },
+  "net8.0": {
+    "versions": {
+      "Microsoft.NETCore.App": "8.0.416",
+      "Microsoft.AspNetCore.App": "8.0.0",
+      "Microsoft.WindowsDesktop.App": "8.0.0"
+    }
   }
 }

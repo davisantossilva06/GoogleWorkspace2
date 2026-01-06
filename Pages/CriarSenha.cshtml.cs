@@ -27,7 +27,7 @@ public class CriarSenhaModel : PageModel
 
     if (string.IsNullOrEmpty(email))
     {
-        return RedirectToPage("/PrimeiroAcesso");
+        return RedirectToPage("/primeiroacesso");
     }
 
     return Page();
@@ -39,7 +39,7 @@ public class CriarSenhaModel : PageModel
     var email = HttpContext.Session.GetString("email_primeiro_acesso");
     if (string.IsNullOrEmpty(email))
     {
-        return RedirectToPage("/PrimeiroAcesso");
+        return RedirectToPage("/primeiroacesso");
     }
 
     var senha = (NovaSenha ?? "").Trim();
@@ -60,7 +60,7 @@ public class CriarSenhaModel : PageModel
 
     if (usuario.SenhaDefinida)
     {
-        return RedirectToPage("/Login");
+        return RedirectToPage("/login");
     }
 
     _usuarios.DefinirSenha(email, senha);

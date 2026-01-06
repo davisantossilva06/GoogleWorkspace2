@@ -39,7 +39,7 @@ app.UseMiddleware<MiddlewareFiltroMaquina>();
 
 app.MapGet("/", context =>
 {
-    context.Response.Redirect("/Login");
+    context.Response.Redirect("/login");
     return Task.CompletedTask;
 });
 
