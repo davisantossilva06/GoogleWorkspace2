@@ -19,6 +19,10 @@ builder.Services.AddSingleton<ServicoUsuarios>();
 builder.Services.AddSingleton<ServicoMaquinas>();
 builder.Services.AddSingleton<ServicoGoogleWorkspace>();
 
+// Novos serviços: Autenticação (TOTP) e Sincronização com Google Workspace
+builder.Services.AddSingleton<ServicoAutenticacao>();
+builder.Services.AddSingleton<ServicoSincronizacao>();
+
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
 

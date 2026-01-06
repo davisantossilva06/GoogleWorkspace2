@@ -1,0 +1,14 @@
+# Ignore Google service account credentials
+Dados/google_service_account.json
+
+# User secrets
+secrets.json
+
+# Build output
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo

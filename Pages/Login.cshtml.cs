@@ -47,6 +47,13 @@ public class LoginModel : PageModel
             return Page();
         }
 
+        // Se o usuário tiver 2FA habilitado, redirecionar para verificação TOTP
+        if (_usuarios.BuscarPorEmail(email)?.TotpEnabled == true)
+        {
+            HttpContext.Session.SetString("usuario_temporario", email);
+            return RedirectToPage("/VerificarTotp");
+        }
+
         HttpContext.Session.SetString("usuario_logado", email);
         return RedirectToPage("/Painel");
     }

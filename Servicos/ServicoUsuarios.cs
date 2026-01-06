@@ -1,6 +1,7 @@
 using System.Text.Json;
 using System.Security.Cryptography;
 using System.Text;
+using SistemaWorkspace.Modelos;
 
 namespace SistemaWorkspace.Servicos;
 
@@ -72,7 +73,8 @@ public class ServicoUsuarios
         if (usuario == null || !usuario.SenhaDefinida)
             return false;
 
-        return usuario.HashSenha == GerarHash(senha);
+        var hash = GerarHashComSalt(senha, usuario.Salt);
+        return usuario.HashSenha == hash;
     }
 
     public void DefinirSenha(string email, string novaSenha)
@@ -85,22 +87,44 @@ public class ServicoUsuarios
 
         if (usuario == null) return;
 
-        usuario.HashSenha = GerarHash(novaSenha);
+        var salt = GerarSalt();
+        usuario.Salt = salt;
+        usuario.HashSenha = GerarHashComSalt(novaSenha, salt);
         usuario.SenhaDefinida = true;
 
         SalvarUsuarios(usuarios);
     }
 
-    private string GerarHash(string senha)
+    public void AtualizarUsuario(UsuarioSistema usuario)
     {
-        using var sha = SHA256.Create();
-        var bytes = sha.ComputeHash(Encoding.UTF8.GetBytes(senha));
+        var usuarios = LerUsuarios();
+        var idx = usuarios.FindIndex(u => u.Email.Trim().ToLower() == usuario.Email.Trim().ToLower());
+        if (idx >= 0)
+        {
+            usuarios[idx] = usuario;
+            SalvarUsuarios(usuarios);
+        }
+    }
+
+    private string GerarSalt()
+    {
+        var bytes = new byte[16];
+        using var rng = RandomNumberGenerator.Create();
+        rng.GetBytes(bytes);
         return Convert.ToBase64String(bytes);
     }
-}
-public class UsuarioSistema
-{
-    public string Email { get; set; } = "";
-    public bool SenhaDefinida { get; set; }
-    public string HashSenha { get; set; } = "";
+
+    private string GerarHashComSalt(string senha, string salt)
+    {
+        var saltBytes = Convert.FromBase64String(salt);
+        // PBKDF2 com HMACSHA256
+        var derived = Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivation.Pbkdf2(
+            password: senha,
+            salt: saltBytes,
+            prf: Microsoft.AspNetCore.Cryptography.KeyDerivation.KeyDerivationPrf.HMACSHA256,
+            iterationCount: 100_000,
+            numBytesRequested: 32);
+
+        return Convert.ToBase64String(derived);
+    }
 }

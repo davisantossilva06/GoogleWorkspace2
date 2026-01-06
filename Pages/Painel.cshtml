@@ -6,6 +6,10 @@
   <header class="topo">
     <h1>Painel Workspace</h1>
     <span>@Model.EmailUsuario</span>
+    <form method="post" style="display:inline; margin-left:10px">
+      <button name="handler" value="HabilitarTotp" class="btn">Habilitar Google Authenticator</button>
+      <button name="handler" value="Sincronizar" class="btn">Sincronizar Agora</button>
+    </form>
     <a href="/Login">Sair</a>
   </header>
 
@@ -19,5 +23,15 @@
       <h2>Relatórios</h2>
       <p>Google Workspace</p>
     </div>
+
+    @if (!string.IsNullOrEmpty(Model.TotpProvisionUri))
+    {
+      <div class="card">
+        <h2>Configurar Google Authenticator</h2>
+        <p>Use este QR ou o segredo para adicionar a conta no app:</p>
+        <img src="https://chart.googleapis.com/chart?chs=200x200&chld=M|0&cht=qr&chl=@(System.Uri.EscapeDataString(Model.TotpProvisionUri))" alt="QR Code" />
+        <p><strong>Segredo:</strong> @Model.TotpSecret</p>
+      </div>
+    }
   </section>
 </div>

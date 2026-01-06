@@ -6,4 +6,8 @@ public class UsuarioSistema
     public bool SenhaDefinida { get; set; }
     public string Salt { get; set; } = "";
     public string HashSenha { get; set; } = "";
+
+    // 2FA (TOTP)
+    public bool TotpEnabled { get; set; }
+    public string? TotpSecret { get; set; }
 }

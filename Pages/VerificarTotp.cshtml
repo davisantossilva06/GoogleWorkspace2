@@ -1,0 +1,18 @@
+@page
+@model SistemaWorkspace.Pages.VerificarTotpModel
+<link rel="stylesheet" href="/css/app.css">
+
+<div class="container">
+  <h2>Verificação de 2FA</h2>
+
+  <form method="post">
+    <label for="codigo">Código do Authenticator</label>
+    <input id="codigo" name="Codigo" />
+    <button type="submit">Verificar</button>
+  </form>
+
+  @if (!string.IsNullOrEmpty(Model.MensagemErro))
+  {
+    <p class="erro">@Model.MensagemErro</p>
+  }
+</div>

@@ -326,6 +326,15 @@
           }
         }
       },
+      "Otp.NET/1.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Otp.NET.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Otp.NET.dll": {}
+        }
+      },
       "System.CodeDom/7.0.0": {
         "type": "package",
         "compile": {
@@ -456,20 +465,16 @@
           }
         }
       },
-      "System.Text.Json/8.0.0": {
+      "System.Text.Json/8.0.1": {
         "type": "package",
         "dependencies": {
           "System.Text.Encodings.Web": "8.0.0"
         },
         "compile": {
-          "lib/net8.0/System.Text.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/net8.0/System.Text.Json.dll": {}
         },
         "runtime": {
-          "lib/net8.0/System.Text.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/net8.0/System.Text.Json.dll": {}
         },
         "build": {
           "buildTransitive/net6.0/System.Text.Json.targets": {}
@@ -949,6 +954,28 @@
         "packageIcon.png"
       ]
     },
+    "Otp.NET/1.4.1": {
+      "sha512": "UXjZ80T6BfVACJWmEcz4UFZ93hwX3STKojKvVpPk3qUhubjnLwIiZMsI4Hh91HhYxC0JlatNdNrVK2wkv4O9/Q==",
+      "type": "package",
+      "path": "otp.net/1.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/Otp.NET.dll",
+        "lib/net461/Otp.NET.dll",
+        "lib/net5.0/Otp.NET.dll",
+        "lib/net6.0/Otp.NET.dll",
+        "lib/net7.0/Otp.NET.dll",
+        "lib/net8.0/Otp.NET.dll",
+        "lib/net9.0/Otp.NET.dll",
+        "lib/netstandard2.0/Otp.NET.dll",
+        "otp.net.1.4.1.nupkg.sha512",
+        "otp.net.nuspec"
+      ]
+    },
     "System.CodeDom/7.0.0": {
       "sha512": "GLltyqEsE5/3IE+zYRP5sNa1l44qKl9v+bfdMcwg+M9qnQf47wK3H0SUR/T+3N4JEQXF3vV4CSuuo0rsg+nq2A==",
       "type": "package",
@@ -1179,10 +1206,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Text.Json/8.0.0": {
-      "sha512": "OdrZO2WjkiEG6ajEFRABTRCi/wuXQPxeV6g8xvUJqdxMvvuCCEk86zPla8UiIQJz3durtUEbNyY/3lIhS0yZvQ==",
+    "System.Text.Json/8.0.1": {
+      "sha512": "7AWk2za1hSEJBppe/Lg+uDcam2TrDqwIKa9XcPssSwyjC2xa39EKEGul3CO5RWNF+hMuZG4zlBDrvhBdDTg4lg==",
       "type": "package",
-      "path": "system.text.json/8.0.0",
+      "path": "system.text.json/8.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1238,16 +1265,11 @@
         "buildTransitive/netcoreapp2.0/System.Text.Json.targets",
         "buildTransitive/netstandard2.0/System.Text.Json.targets",
         "lib/net462/System.Text.Json.dll",
-        "lib/net462/System.Text.Json.xml",
         "lib/net6.0/System.Text.Json.dll",
-        "lib/net6.0/System.Text.Json.xml",
         "lib/net7.0/System.Text.Json.dll",
-        "lib/net7.0/System.Text.Json.xml",
         "lib/net8.0/System.Text.Json.dll",
-        "lib/net8.0/System.Text.Json.xml",
         "lib/netstandard2.0/System.Text.Json.dll",
-        "lib/netstandard2.0/System.Text.Json.xml",
-        "system.text.json.8.0.0.nupkg.sha512",
+        "system.text.json.8.0.1.nupkg.sha512",
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -1297,35 +1319,29 @@
       "Google.Apis.Auth >= 1.73.0",
       "Microsoft.AspNetCore.Cryptography.KeyDerivation >= 8.0.0",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 8.0.0",
-      "System.Text.Json >= 8.0.0"
+      "Otp.NET >= 1.4.1",
+      "System.Text.Json >= 8.0.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrador\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/home/codespace/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrador\\Desktop\\painel2\\PainelWorkspace2\\01\\SistemaWorkspace.csproj",
+      "projectUniqueName": "/workspaces/GoogleWorkspace2/SistemaWorkspace.csproj",
       "projectName": "SistemaWorkspace",
-      "projectPath": "C:\\Users\\Administrador\\Desktop\\painel2\\PainelWorkspace2\\01\\SistemaWorkspace.csproj",
-      "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrador\\Desktop\\painel2\\PainelWorkspace2\\01\\obj\\",
+      "projectPath": "/workspaces/GoogleWorkspace2/SistemaWorkspace.csproj",
+      "packagesPath": "/home/codespace/.nuget/packages/",
+      "outputPath": "/workspaces/GoogleWorkspace2/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Administrador\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/codespace/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1343,7 +1359,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -1369,9 +1386,13 @@
             "target": "Package",
             "version": "[8.0.0, )"
           },
+          "Otp.NET": {
+            "target": "Package",
+            "version": "[1.4.1, )"
+          },
           "System.Text.Json": {
             "target": "Package",
-            "version": "[8.0.0, )"
+            "version": "[8.0.1, )"
           }
         },
         "imports": [
@@ -1385,6 +1406,20 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.22, 8.0.22]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[8.0.22, 8.0.22]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.22, 8.0.22]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -1393,7 +1428,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
@@ -1402,7 +1437,7 @@
       "code": "NU1903",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'System.Text.Json' 8.0.0 tem uma alta vulnerabilidade de gravidade conhecida, https://github.com/advisories/GHSA-8g4q-xg66-9fp4",
+      "message": "Package 'System.Text.Json' 8.0.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-8g4q-xg66-9fp4",
       "libraryId": "System.Text.Json",
       "targetGraphs": [
         "net8.0"
@@ -1412,7 +1447,7 @@
       "code": "NU1903",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'System.Text.Json' 8.0.0 tem uma alta vulnerabilidade de gravidade conhecida, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w",
+      "message": "Package 'System.Text.Json' 8.0.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w",
       "libraryId": "System.Text.Json",
       "targetGraphs": [
         "net8.0"
